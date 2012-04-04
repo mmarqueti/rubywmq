@@ -19,14 +19,7 @@ require 'generate/generate_reason'
 require 'generate/generate_const'
 require 'generate/generate_structs'
 
-include_path = ''
-if RUBY_PLATFORM =~ /mswin32/
-  include_path = 'C:\Program Files\IBM\WebSphere MQ\Tools\c\include'
-  dir_config('mqm', include_path, '.')
-else
-  include_path = '/opt/mqm/inc'
-  #dir_config('mqm', include_path, '/opt/mqm/lib')
-end
+include_path = '/opt/mqm/inc'
 
 have_header('cmqc.h')
 
